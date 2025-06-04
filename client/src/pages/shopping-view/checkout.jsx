@@ -7,6 +7,7 @@ import { useState } from "react";
 import { createNewOrder } from "@/store/shop/order-slice";
 import { Navigate } from "react-router-dom";
 import { useToast } from "@/components/ui/use-toast";
+import { formatCurrency } from "@/lib/utils";
 
 function ShoppingCheckout() {
   const { cartItems } = useSelector((state) => state.shopCart);
@@ -115,7 +116,7 @@ function ShoppingCheckout() {
           <div className="mt-8 space-y-4">
             <div className="flex justify-between">
               <span className="font-bold">Total</span>
-              <span className="font-bold">${totalCartAmount}</span>
+              <span className="font-bold">{formatCurrency(totalCartAmount)}</span>
             </div>
           </div>
           <div className="mt-4 w-full">
