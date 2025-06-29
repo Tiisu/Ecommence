@@ -24,6 +24,8 @@ import PaystackReturnPage from "./pages/shopping-view/paystack-return";
 import PaymentSuccessPage from "./pages/shopping-view/payment-success";
 import PaymentFailedPage from "./pages/shopping-view/payment-failed";
 import SearchProducts from "./pages/shopping-view/search";
+import AboutUs from "./pages/shopping-view/about";
+import ContactUs from "./pages/shopping-view/contact";
 
 function App() {
   const { user, isAuthenticated, isLoading } = useSelector(
@@ -92,6 +94,8 @@ function App() {
           <Route path="payment-success" element={<PaymentSuccessPage />} />
           <Route path="payment-failed" element={<PaymentFailedPage />} />
           <Route path="search" element={<SearchProducts />} />
+          <Route path="about" element={<AboutUs />} />
+          <Route path="contact" element={<ContactUs />} />
         </Route>
         <Route path="/unauth-page" element={<UnauthPage />} />
         <Route path="*" element={<NotFound />} />
