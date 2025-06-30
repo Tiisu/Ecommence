@@ -22,7 +22,7 @@ const commonFeatureRouter = require("./routes/common/feature-routes");
 require('dotenv').config();
 
 mongoose
-  .connect(process.env.MONGODB_URL || 'mongodb+srv://tiisusharif1:Ruujd4loVjdSkRae@cluster0.6hqjc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+  .connect(process.env.MONGODB_URL)
   .then(() => console.log("MongoDB connected"))
   .catch((error) => console.log(error));
 
