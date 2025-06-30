@@ -110,11 +110,15 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
       <DialogContent className="grid grid-cols-2 gap-8 sm:p-12 max-w-[90vw] sm:max-w-[80vw] lg:max-w-[70vw]">
         <div className="relative overflow-hidden rounded-lg">
           <img
-            src={productDetails?.image}
+            src={productDetails?.image?.replace('http://', 'https://') || "https://via.placeholder.com/600x600?text=No+Image"}
             alt={productDetails?.title}
             width={600}
             height={600}
             className="aspect-square w-full object-cover"
+            onError={(e) => {
+              console.log('Product details image failed to load:', productDetails?.image);
+              e.target.src = "https://via.placeholder.com/600x600?text=Image+Error";
+            }}
           />
         </div>
         <div className="">

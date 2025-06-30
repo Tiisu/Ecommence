@@ -13,7 +13,7 @@ function AdminProductTile({
       <div>
         <div className="relative">
           <img
-            src={product?.image || "https://via.placeholder.com/300x300?text=No+Image"}
+            src={product?.image?.replace('http://', 'https://') || "https://via.placeholder.com/300x300?text=No+Image"}
             alt={product?.title}
             className="w-full h-[300px] object-cover rounded-t-lg"
             onError={(e) => {
