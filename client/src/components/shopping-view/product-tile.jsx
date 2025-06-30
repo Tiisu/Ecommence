@@ -14,9 +14,13 @@ function ShoppingProductTile({
       <div onClick={() => handleGetProductDetails(product?._id)}>
         <div className="relative">
           <img
-            src={product?.image}
+            src={product?.image || "https://via.placeholder.com/300x300?text=No+Image"}
             alt={product?.title}
             className="w-full h-[300px] object-cover rounded-t-lg"
+            onError={(e) => {
+              console.log('Image failed to load:', product?.image);
+              e.target.src = "https://via.placeholder.com/300x300?text=Image+Error";
+            }}
           />
           {product?.totalStock === 0 ? (
             <Badge className="absolute top-2 left-2 bg-red-500 hover:bg-red-600">

@@ -26,6 +26,7 @@ import PaymentFailedPage from "./pages/shopping-view/payment-failed";
 import SearchProducts from "./pages/shopping-view/search";
 import AboutUs from "./pages/shopping-view/about";
 import ContactUs from "./pages/shopping-view/contact";
+import ApiDebug from "./components/debug/ApiDebug";
 
 function App() {
   const { user, isAuthenticated, isLoading } = useSelector(
@@ -43,6 +44,7 @@ function App() {
 
   return (
     <div className="flex flex-col overflow-hidden bg-white">
+      <ApiDebug />
       <Routes>
         <Route
           path="/"
